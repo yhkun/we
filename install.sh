@@ -986,7 +986,6 @@ checkIP() {
 			echoContent red "\n ---> 检测到多个ip，请确认是否关闭cloudflare的云朵"
 			echoContent yellow " ---> 关闭云朵后等待三分钟后重试"
 			echoContent yellow " ---> 检测到的ip如下:[${localIP}]"
-			exit 0
 		fi
 		echoContent green " ---> 当前域名ip为:[${localIP}]"
 	fi
