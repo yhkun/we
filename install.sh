@@ -962,7 +962,7 @@ checkIP() {
 	echoContent skyBlue "\n ---> 检查域名ip中"
 	localIP=$(curl -s -m 2 "${domain}/ip")
 	handleNginx stop
-	if [[ -z ${localIP} ]] || ! echo "${localIP}" | sed '1{s/[^(]*(//;s/).*//;q}' | grep -q '\.' && ! echo "${localIP}" | sed '1{s/[^(]*(//;s/).*//;q}' | grep -q ':'; then
+	if [[ -z ${localIP} ]] ||  echo "${localIP}" | sed '1{s/[^(]*(//;s/).*//;q}' | grep -q '\.' && ! echo "${localIP}" | sed '1{s/[^(]*(//;s/).*//;q}' | grep -q ':'; then
 		echoContent red "\n ---> 未检测到当前域名的ip"
 		echoContent yellow " ---> 请检查域名是否书写正确"
 		echoContent yellow " ---> 请检查域名dns解析是否正确"
