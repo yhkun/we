@@ -978,8 +978,6 @@ checkIP() {
 			allowPort 443
 			handleNginx start
 			checkIP
-		else
-			exit 0
 		fi
 	else
 		if echo "${localIP}" | awk -F "[,]" '{print $2}' | grep -q "." || echo "${localIP}" | awk -F "[,]" '{print $2}' | grep -q ":"; then
